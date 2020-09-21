@@ -3,7 +3,6 @@ node {
         checkout scm
         sh "git rev-parse --short HEAD > commit-id"
         tag = readFile('commit-id').replace("\n", "").replace("\r", "")
-        appname = "flask-alpine:"
     }
     
     stage('SonarQube') {
